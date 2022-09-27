@@ -32,10 +32,6 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.1.7 
-
-      # - name: run kics scan
-      #   run: |
-      #     cat myResults/results.json
         
       - name: Configuring AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -45,19 +41,11 @@ jobs:
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           Aws-region: ${{env.aws-region}}
 
-      # Runs a single command using the runners shell
+      # Runs command using the runners shell
       - name: terraform init
         uses: hashicorp/terraform-github-actions/init@v0.4.0
       - name: terraform Validate
         uses: hashicorp/terraform-github-actions/validate@v0.3.7
       - name: terraform Apply
         uses: hashicorp/terraform-github-actions/apply@v0.4.0
-        # run: |
-        #   cd main
-        #   terraform init
-
-      # Runs a set of commands using the runners shell
-      # - name: Run a multi-line script
-      #   run: |
-      #     echo Add other actions to build,
-      #     echo test, and deploy your project.
+        
