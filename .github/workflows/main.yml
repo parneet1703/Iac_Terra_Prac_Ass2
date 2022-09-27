@@ -48,7 +48,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: terraform init
         run: |
-          cd main.tf
+          cd main
           terraform init
 
       # Runs a set of commands using the runners shell
