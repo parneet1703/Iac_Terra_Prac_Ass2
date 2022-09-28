@@ -43,8 +43,8 @@ jobs:
 
       # Runs command using the runners shell
       - name: terraform init
-        # uses: hashicorp/terraform-github-actions/init@v0.4.0
         run: terraform init
+        # uses: hashicorp/terraform-github-actions/init@v0.4.0
       # - name: terraform Validate
       #   uses: hashicorp/terraform-github-actions/validate@v0.3.7
       - name: terraform plan
